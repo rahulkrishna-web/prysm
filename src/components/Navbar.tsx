@@ -45,7 +45,7 @@ export default function Navbar({ onGetAccessClick }: NavbarProps) {
       <div className="flex items-center gap-3">
         <button 
           onClick={onGetAccessClick}
-          className="ml-2 rounded-lg bg-gradient-to-r from-[#234090] to-[#65b5b3] px-6 py-2.5 text-sm font-bold text-white transition-transform hover:scale-105 active:scale-95 hidden md:block shadow-md hover:shadow-lg"
+          className="ml-2 rounded-lg bg-gradient-to-r from-[#234090] to-[#65b5b3] px-4 py-2 md:px-6 md:py-2.5 text-xs md:text-sm font-bold text-white transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg whitespace-nowrap"
         >
           Get Early Access
         </button>
