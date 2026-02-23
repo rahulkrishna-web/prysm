@@ -118,7 +118,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-8 text-center border-t border-white/5 bg-[#060010]">
         <p className="text-sm text-white/30">
-          © {new Date().getFullYear()} Prysm Infrastructure Group. All rights reserved.
+          © {new Date().getFullYear()} Prsym Air Filters. All rights reserved.
         </p>
       </footer>
     </main>
