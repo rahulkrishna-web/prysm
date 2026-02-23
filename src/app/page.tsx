@@ -107,16 +107,20 @@ export default function Home() {
       </section>
 
       {/* Section 3: Coming Soon */}
-      <section className="flex flex-col items-center justify-center py-[60px] text-center border-t border-white/5">
-        <div className="space-y-4 relative w-full overflow-hidden flex justify-center">
+      <section className="flex flex-col items-center justify-center py-[120px] text-center border-t border-white/5">
+        <div className="w-full overflow-hidden flex justify-center">
           <h2 className="text-[12vw] font-black uppercase tracking-tighter opacity-10 leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#234090] to-clear-teal select-none">
             COMING SOON
           </h2>
-          <p className="mt-12 text-sm text-white/30 absolute bottom-0">
-            © 2026 Prysm Infrastructure Group. All rights reserved.
-          </p>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="w-full py-8 text-center border-t border-white/5 bg-[#060010]">
+        <p className="text-sm text-white/30">
+          © {new Date().getFullYear()} Prysm Infrastructure Group. All rights reserved.
+        </p>
+      </footer>
     </main>
   );
 }
