@@ -108,11 +108,11 @@ export default function Home() {
             direction="bottom"
             animationFrom={{ filter: 'blur(10px)', opacity: 0, transform: 'translate3d(0,50px,0)' }}
             animationTo={[
-              { filter: 'blur(5px)', opacity: 0.2, transform: 'translate3d(0,-10px,0)' },
-              { filter: 'blur(0px)', opacity: 0.4, transform: 'translate3d(0,0,0)' }
+              { filter: 'blur(5px)', opacity: 0.4, transform: 'translate3d(0,-10px,0)' },
+              { filter: 'blur(0px)', opacity: 0.8, transform: 'translate3d(0,0,0)' }
             ]}
             className="text-4xl sm:text-6xl md:text-[12vw] font-black uppercase tracking-tighter leading-none select-none justify-center"
-            spanClassName="text-transparent bg-clip-text bg-gradient-to-r from-[#234090] to-clear-teal"
+            spanClassName="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80"
           />
         </div>
       </section>

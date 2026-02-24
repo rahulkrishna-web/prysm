@@ -14,7 +14,7 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
     name: "",
     email: "",
     company: "",
-    facilitySize: "",
+    industry: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -32,7 +32,7 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
       setTimeout(() => {
         onClose();
         setIsSuccess(false);
-        setFormData({ name: "", email: "", company: "", facilitySize: "" });
+        setFormData({ name: "", email: "", company: "", industry: "" });
       }, 3000);
     }, 1500);
   };
@@ -152,22 +152,18 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
                     </div>
 
                     <div>
-                      <label htmlFor="facilitySize" className="mb-1.5 block text-sm font-medium text-white/80">
-                        Facility Size (sq ft) <span className="text-white/40 font-normal">(Optional)</span>
+                      <label htmlFor="industry" className="mb-1.5 block text-sm font-medium text-white/80">
+                        Industry / Application <span className="text-white/40 font-normal">(Optional)</span>
                       </label>
-                      <select
-                        id="facilitySize"
-                        name="facilitySize"
-                        value={formData.facilitySize}
+                      <input
+                        type="text"
+                        id="industry"
+                        name="industry"
+                        value={formData.industry}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-2.5 text-white focus:border-clear-teal focus:outline-none focus:ring-1 focus:ring-clear-teal"
-                      >
-                        <option value="" className="bg-black text-white/50">Select Size</option>
-                        <option value="under_10k" className="bg-black text-white">Under 10,000</option>
-                        <option value="10k_to_50k" className="bg-black text-white">10,000 - 50,000</option>
-                        <option value="50k_to_100k" className="bg-black text-white">50,000 - 100,000</option>
-                        <option value="over_100k" className="bg-black text-white">100,000+</option>
-                      </select>
+                        className="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-2.5 text-white placeholder-white/30 focus:border-clear-teal focus:outline-none focus:ring-1 focus:ring-clear-teal"
+                        placeholder="e.g. Data Center, Healthcare"
+                      />
                     </div>
 
                     <button
