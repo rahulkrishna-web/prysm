@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import GradientBlinds from "@/components/GradientBlinds";
 import SpotlightCard from "@/components/SpotlightCard";
 import LeadCaptureModal from "@/components/LeadCaptureModal";
+import BlurText from "@/components/BlurText";
 import { ArrowRight, Settings2, Activity, Zap } from "lucide-react";
 
 export default function Home() {
@@ -50,15 +51,6 @@ export default function Home() {
           <p className="mt-6 max-w-2xl text-lg text-white/70 md:text-xl font-light">
              Launching soon.
           </p>
-          
-          <div className="mt-10 pointer-events-auto">
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#234090] to-clear-teal px-8 py-3.5 font-bold text-white transition-transform hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(101,181,179,0.3)] hover:shadow-[0_0_60px_rgba(101,181,179,0.5)]"
-            >
-               Get Early Access <ArrowRight size={18} />
-            </button>
-          </div>
         </div>
       </section>
 
@@ -108,10 +100,20 @@ export default function Home() {
 
       {/* Section 3: Coming Soon */}
       <section className="flex flex-col items-center justify-center py-[120px] text-center border-t border-white/5">
-        <div className="w-full overflow-hidden flex justify-center">
-          <h2 className="text-[12vw] font-black uppercase tracking-tighter opacity-10 leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#234090] to-clear-teal select-none">
-            COMING SOON
-          </h2>
+        <div className="w-full overflow-hidden flex justify-center px-4">
+          <BlurText
+            text="COMING SOON"
+            animateBy="letters"
+            delay={50}
+            direction="bottom"
+            animationFrom={{ filter: 'blur(10px)', opacity: 0, transform: 'translate3d(0,50px,0)' }}
+            animationTo={[
+              { filter: 'blur(5px)', opacity: 0.2, transform: 'translate3d(0,-10px,0)' },
+              { filter: 'blur(0px)', opacity: 0.4, transform: 'translate3d(0,0,0)' }
+            ]}
+            className="text-4xl sm:text-6xl md:text-[12vw] font-black uppercase tracking-tighter leading-none select-none justify-center"
+            spanClassName="text-transparent bg-clip-text bg-gradient-to-r from-[#234090] to-clear-teal"
+          />
         </div>
       </section>
 

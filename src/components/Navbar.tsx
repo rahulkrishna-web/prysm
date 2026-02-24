@@ -30,7 +30,7 @@ const DiscordIcon = () => (
 
 export default function Navbar({ onGetAccessClick }: NavbarProps) {
   return (
-    <nav className="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-3 bg-white/85 backdrop-blur-lg border-b border-white/40 text-black shadow-sm">
+    <nav className="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-3 bg-transparent text-white">
       <div className="flex items-center">
         <div className="flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80">
           {/* Using native img for SVG to allow natural responsive scaling (h-full w-auto) */}
