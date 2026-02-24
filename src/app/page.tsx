@@ -69,9 +69,9 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#65b5b3]/10 text-[#65b5b3]">
                 <Settings2 size={24} />
               </div>
-              <h3 className="mt-6 text-xl font-bold">Less Filter Replacement</h3>
+              <h3 className="mt-6 text-xl font-bold">Made in India</h3>
               <p className="mt-2 text-white/50">
-                HEPA & Pre-filters engineered for Indian pollution levels, reducing maintenance downtime by 30%.
+                Manufactured locally for Indian dust loads, operating conditions, and critical facilities.
               </p>
             </SpotlightCard>
 
@@ -79,9 +79,9 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#234090]/10 text-[#234090]">
                 <Activity size={24} />
               </div>
-              <h3 className="mt-6 text-xl font-bold">Smart Controls</h3>
+              <h3 className="mt-6 text-xl font-bold">Certified Performance</h3>
               <p className="mt-2 text-white/50">
-                Real-time AQI monitoring with automated airflow adjustment.
+                BIS-certified filters with ISO-compliant in-house testing and documented validation.
               </p>
             </SpotlightCard>
 
@@ -89,9 +89,9 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#234090]/20 to-[#65b5b3]/20 text-white">
                 <Zap size={24} className="text-[#65b5b3]" />
               </div>
-              <h3 className="mt-6 text-xl font-bold">Plug & Play Integration</h3>
+              <h3 className="mt-6 text-xl font-bold">Engineered for Uptime</h3>
               <p className="mt-2 text-white/50">
-                Retrofit-ready modules for existing HVAC systems.
+                Optimized for filter life, pressure stability, and operating cost efficiency.
               </p>
             </SpotlightCard>
           </div>
