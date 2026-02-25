@@ -6,7 +6,32 @@ import GradientBlinds from "@/components/GradientBlinds";
 import SpotlightCard from "@/components/SpotlightCard";
 import LeadCaptureModal from "@/components/LeadCaptureModal";
 import BlurText from "@/components/BlurText";
-import { ArrowRight, Settings2, Activity, Zap } from "lucide-react";
+import { ShieldCheck, Activity } from "lucide-react";
+
+function IndianFlagIcon({ className, size = 24 }: { className?: string; size?: number | string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 36 24"
+      width={size}
+      height={size}
+      className={className}
+      fill="none"
+    >
+      <rect width="36" height="24" rx="4" fill="white" />
+      <path d="M0 4C0 1.79086 1.79086 0 4 0H32C34.2091 0 36 1.79086 36 4V8H0V4Z" fill="#FF9933" />
+      <path d="M0 16H36V20C36 22.2091 34.2091 24 32 24H4C1.79086 24 0 22.2091 0 20V16Z" fill="#138808" />
+      <path d="M0 8H36V16H0V8Z" fill="#FFFFFF" />
+      <circle cx="18" cy="12" r="3" fill="none" stroke="#000080" strokeWidth="0.5" />
+      <circle cx="18" cy="12" r="0.5" fill="#000080" />
+      <g stroke="#000080" strokeWidth="0.25">
+        {[...Array(24)].map((_, i) => (
+          <line key={i} x1="18" y1="12" x2="18" y2="9" transform={`rotate(${i * 15} 18 12)`} />
+        ))}
+      </g>
+    </svg>
+  );
+}
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,17 +64,14 @@ export default function Home() {
         
         {/* Content overlay matching the clean React Bits aesthetic */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center pointer-events-none">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium backdrop-blur-md mb-8">
-            <span className="flex h-2 w-2 rounded-full bg-clear-teal"></span>
-            Built for Clean Air.
-          </div>
+          
           
           <h1 className="max-w-4xl text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl break-words text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-            High-performance air filtration systems.
+            Where clean air meets pure purpose
           </h1>
           
           <p className="mt-6 max-w-2xl text-lg text-white/70 md:text-xl font-light">
-             Launching soon.
+             Innovative, sustainable, and affordable air filtration for every individual and industry across Bharat.
           </p>
         </div>
       </section>
@@ -60,14 +82,14 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold md:text-5xl tracking-tight">In Development.</h2>
             <p className="mt-4 text-white/50 max-w-2xl mx-auto">
-              Air filtration systems designed for critical Indian facilities — where uptime, compliance, and performance cannot be compromised.
+              Air filtration systems designed for critical Indian facilities, where uptime, compliance, and performance cannot be compromised.
             </p>
           </div>
           
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <SpotlightCard>
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#65b5b3]/10 text-[#65b5b3]">
-                <Settings2 size={24} />
+                <IndianFlagIcon size={24} />
               </div>
               <h3 className="mt-6 text-xl font-bold">Made in India</h3>
               <p className="mt-2 text-white/50">
@@ -77,7 +99,7 @@ export default function Home() {
 
             <SpotlightCard spotlightColor="rgba(35, 64, 144, 0.15)">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#234090]/10 text-[#234090]">
-                <Activity size={24} />
+                <ShieldCheck size={24} />
               </div>
               <h3 className="mt-6 text-xl font-bold">Certified Performance</h3>
               <p className="mt-2 text-white/50">
@@ -87,7 +109,7 @@ export default function Home() {
 
             <SpotlightCard>
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#234090]/20 to-[#65b5b3]/20 text-white">
-                <Zap size={24} className="text-[#65b5b3]" />
+                <Activity size={24} className="text-[#65b5b3]" />
               </div>
               <h3 className="mt-6 text-xl font-bold">Engineered for Uptime</h3>
               <p className="mt-2 text-white/50">
@@ -120,7 +142,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-8 text-center border-t border-white/5 bg-[#060010]">
         <p className="text-sm text-white/30">
-          © {new Date().getFullYear()} Prsym Air Filters. All rights reserved.
+          © {new Date().getFullYear()} Prsym Filters. All rights reserved.
         </p>
       </footer>
     </main>
