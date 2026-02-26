@@ -4,9 +4,9 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import GradientBlinds from "@/components/GradientBlinds";
 import SpotlightCard from "@/components/SpotlightCard";
-import LeadCaptureModal from "@/components/LeadCaptureModal";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
 import BlurText from "@/components/BlurText";
-import { ShieldCheck, Activity } from "lucide-react";
+import { ShieldCheck, Activity, Instagram, Linkedin } from "lucide-react";
 
 function IndianFlagIcon({ className, size = 24 }: { className?: string; size?: number | string }) {
   return (
@@ -34,15 +34,16 @@ function IndianFlagIcon({ className, size = 24 }: { className?: string; size?: n
 }
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const scrollToWaitlist = () => {
+    const element = document.getElementById("waitlist");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main className="flex min-h-screen flex-col bg-[#060010] text-white">
-      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      
       {/* Section 1: Hero (ReactBits style) */}
       <section className="relative h-[100vh] w-full items-center justify-center overflow-hidden border-b border-white/10">
-        <Navbar onGetAccessClick={() => setIsModalOpen(true)} />
+        <Navbar onGetAccessClick={scrollToWaitlist} />
         
         {/* 
           Using the official React Bits GradientBlinds component.
@@ -64,8 +65,6 @@ export default function Home() {
         
         {/* Content overlay matching the clean React Bits aesthetic */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center pointer-events-none">
-          
-          
           <h1 className="max-w-4xl text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl break-words text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
             Where clean air meets pure purpose
           </h1>
@@ -113,7 +112,7 @@ export default function Home() {
               </div>
               <h3 className="mt-6 text-xl font-bold">Engineered for Uptime</h3>
               <p className="mt-2 text-white/50">
-                Optimized for filter life, pressure stability, and operating cost efficiency.
+                Optimized for extended service life, energy saving, and cost‑efficient operation.
               </p>
             </SpotlightCard>
           </div>
@@ -122,7 +121,7 @@ export default function Home() {
 
       {/* Section 3: Coming Soon */}
       <section className="flex flex-col items-center justify-center py-[120px] text-center border-t border-white/5">
-        <div className="w-full overflow-hidden flex justify-center px-4">
+        <div className="w-full overflow-hidden flex justify-center px-4 md:mb-12">
           <BlurText
             text="COMING SOON"
             animateBy="letters"
@@ -139,8 +138,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section 4: Waitlist Form */}
+      <section id="waitlist" className="relative px-6 py-24 md:px-12 border-t border-white/5 bg-[#080015]">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold md:text-5xl tracking-tight">Stay Updated</h2>
+          </div>
+          
+          <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12 backdrop-blur-sm">
+            <LeadCaptureForm />
+          </div>
+        </div>
+        
+        {/* Subtle decorative elements */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-[#65b5b3] opacity-[0.03] blur-[120px] pointer-events-none rounded-full" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#234090] opacity-[0.05] blur-[120px] pointer-events-none rounded-full" />
+      </section>
+
       {/* Footer */}
-      <footer className="w-full py-8 text-center border-t border-white/5 bg-[#060010]">
+      <footer className="w-full py-12 text-center border-t border-white/5 bg-[#060010]">
+        <div className="flex justify-center gap-6 mb-6">
+          <a 
+            href="https://www.linkedin.com/company/prysmfilters/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/30 hover:text-white transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={20} />
+          </a>
+          <a 
+            href="#" 
+            className="text-white/30 hover:text-white transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram size={20} />
+          </a>
+        </div>
         <p className="text-sm text-white/30">
           © {new Date().getFullYear()} Prsym Filters. All rights reserved.
         </p>
