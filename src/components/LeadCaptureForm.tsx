@@ -191,7 +191,7 @@ export default function LeadCaptureForm() {
       </button>
       
       <p className="text-center text-xs text-white/30">
-        By submitting, you agree to our privacy policy and to receive updates from Prsym.
+        By submitting, you agree to our privacy policy and to receive updates from Prysm.
       </p>
     </form>
   );

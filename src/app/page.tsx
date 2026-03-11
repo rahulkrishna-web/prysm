@@ -176,7 +176,7 @@ export default function Home() {
           </a>
         </div>
         <p className="text-sm text-white/30">
-          © {new Date().getFullYear()} Prsym Filters. All rights reserved.
+          © {new Date().getFullYear()} Prysm Filters. All rights reserved.
         </p>
       </footer>
     </main>

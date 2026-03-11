@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Prsym Filters | Made in India HVAC Air Filters",
+  title: "Prysm Filters | Made in India HVAC Air Filters",
   description: "BIS-certified HVAC air filters manufactured in India for critical facilities. Engineered for uptime, compliance, and performance.",
 };
 
